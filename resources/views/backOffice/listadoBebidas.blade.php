@@ -4,6 +4,8 @@
 <body>
     @include('partials.header')
     <main class="container">
+        <h3>Listado de Bebidas</h3>
+        <a href="/backOffice/bebida/create" ><button class="btn btn-primary mb-3 mt-3"> Crear una bebida</button></a>
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>

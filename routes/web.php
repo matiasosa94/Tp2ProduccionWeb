@@ -18,9 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [productController::class,'index']);
-Route::get('/{id}', [productController::class,'producto']);
+Route::get('/bebidasWeb', [productController::class,'index']);
+Route::get('/bebidasWeb/{id}', [productController::class,'producto']);
 
-Route::get('backOffice', [backOfficeController::class,'index']);
+Route::get('/backOffice', [backOfficeController::class,'botonera']);
 
 /*Marcas*/
 Route::get('backOffice/marca/create', [backOfficeController::class,'altaMarca']);
@@ -35,7 +36,7 @@ Route::post('backOffice/tipo', [backOfficeController::class,'guardarTipo']);
 /* Bebidas*/
 
 Route::get('backOffice/bebida/create', [backOfficeController::class,'altaBebida']);
-Route::get('backOffice/bebida', [backOfficeController::class,'index']);
+Route::get('backOffice/bebida', [backOfficeController::class,'listadoBebidas']);
 Route::post('backOffice/bebida', [backOfficeController::class,'guardarBebida']);
 Route::get('backOffice/bebida/{id}/edit', [backOfficeController::class,'editarBebida']);
 Route::post('backOffice/bebida/{id}', [backOfficeController::class,'updateBebida']);

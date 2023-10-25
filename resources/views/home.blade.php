@@ -25,6 +25,7 @@
                     <td>{{$producto->cantidad}}</td>
                     <td>{{$producto->precio}}</td>
                     <td><img width="80px" height="80px" src="{{$producto->imagen}}" alt="imagen de {{$producto->nombre}}"></td>
+                    <td><a href="/bebidasWeb/{{$producto->id}}"><button class="btn btn-primary">Ver producto</button></a></td>
                     @empty
                         <td class="text-center">¿Quien... se ha tomado todo el vino?</td>
                     @endforelse

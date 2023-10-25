@@ -20,6 +20,6 @@ class productController extends Controller
 
     public function producto($id){
         $producto = $this->getProductoById($id);
-        return view("product",['producto'=>$producto]);
+        return view("producto",['producto'=>$producto]);
     }
 }

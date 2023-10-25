@@ -9,8 +9,13 @@ use Illuminate\Http\Request;
 
 class backOfficeController extends Controller
 {
+
+
+    public function botonera(){
+        return view("backOffice.botonera");
+    }
     /*mostrar productos para editar o eliminar*/
-    public function index(){
+    public function listadoBebidas(){
         $productos= Bebida::all();
         return view("backOffice.listadoBebidas",compact("productos"));
     }
