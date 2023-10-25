@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\backOfficeController;
+use App\Http\Controllers\productController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +17,24 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [productController::class,'index']);
+Route::get('/{id}', [productController::class,'producto']);
+
+Route::get('backOffice', [backOfficeController::class,'index']);
+
+/*Marcas*/
+Route::get('backOffice/marca/create', [backOfficeController::class,'altaMarca']);
+Route::get('backOffice/marca', [backOfficeController::class,'marcas']);
+Route::post('backOffice/marca', [backOfficeController::class,'guardarMarca']);
+
+/*tipos de bebidas*/
+Route::get('backOffice/tipo/create', [backOfficeController::class,'altaTipo']);
+Route::get('backOffice/tipo', [backOfficeController::class,'tipos']);
+Route::post('backOffice/tipo', [backOfficeController::class,'guardarTipo']);
+
+/* Bebidas*/
+
+Route::get('backOffice/bebida/create', [backOfficeController::class,'altaBebida']);
+Route::get('backOffice/bebida', [backOfficeController::class,'index']);
+Route::post('backOffice/bebida', [backOfficeController::class,'guardarBebida']);
+
