@@ -35,11 +35,32 @@ class backOfficeController extends Controller
         return redirect("backOffice/bebida");
     }
     /*formulario para editar bebida*/
-    public function editarBebida(){
-
+    public function editarBebida($id){
+        $bebida=Bebida::find($id);
+        $marcas=Marca::all();
+        $tipos=Tipo::all();
+        return view("backOffice.editarProducto",compact("bebida","marcas","tipos"));
     }
     /*guardar cambios de una bebida*/
-    public function updateBebida(Request $request){
+    public function updateBebida($id){
+        $bebida=Bebida::find($id);
+        $bebida->nombre =request()->input("nombre");
+        $bebida->cantidad=request()->input("cantidad");
+        $bebida->precio=request()->input("precio");
+        $bebida->marca_id=request()->input("marca");
+        $bebida->tipo_id=request()->input("tipo");
+        $bebida->imagen=request()->input("imagen");
+        $bebida->descripcion=request()->input("descripcion");
+        $bebida->save();
+        return redirect("backOffice/bebida"); 
+    }
+
+    /*eliminar una bebida*/
+
+    public function eliminar($id){
+        $bebida=Bebida::find($id);
+        $bebida->delete();
+        return redirect("backOffice/bebida");
     }
 
 

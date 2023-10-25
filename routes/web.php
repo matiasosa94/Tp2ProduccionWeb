@@ -37,4 +37,7 @@ Route::post('backOffice/tipo', [backOfficeController::class,'guardarTipo']);
 Route::get('backOffice/bebida/create', [backOfficeController::class,'altaBebida']);
 Route::get('backOffice/bebida', [backOfficeController::class,'index']);
 Route::post('backOffice/bebida', [backOfficeController::class,'guardarBebida']);
+Route::get('backOffice/bebida/{id}/edit', [backOfficeController::class,'editarBebida']);
+Route::post('backOffice/bebida/{id}', [backOfficeController::class,'updateBebida']);
+Route::delete('backOffice/bebida/{id}/eliminar', [backOfficeController::class,'eliminar']);
 

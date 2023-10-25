@@ -18,8 +18,13 @@
                     <td>{{$producto->nombre}}</td>
                     <td>{{$producto->precio}}</td>
                     <td>
-                        <a href="*" class="btn btn-primary"><span class="fa fa-edit"></span></a>
-                        <a href="*" class="btn btn-danger"><span class="fa fa-trash"></span></a>
+                        <a href="/backOffice/bebida/{{$producto->id}}/edit" class="btn btn-primary"><span class="fa fa-edit"></span></a>
+                        
+                        <form action="/backOffice/bebida/{{$producto->id}}/eliminar" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-danger"><span class="fa fa-trash"></span></button>
+                      </form>
                     </td>
                     @empty
                         <td class="text-center">¿Quien... se ha tomado todo el vino?</td>

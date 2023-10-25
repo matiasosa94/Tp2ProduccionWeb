@@ -20,11 +20,11 @@
                 <tr>
                     
                     <td>{{$producto->nombre}}</td>
-                    <td>{{$producto->marca_id}}</td>
-                    <td>{{$producto->tipo_id}}</td>
+                    <td>{{$producto->marca->marca}}</td>
+                    <td>{{$producto->tipo->tipo}}</td>
                     <td>{{$producto->cantidad}}</td>
                     <td>{{$producto->precio}}</td>
-                    <td>{{$producto->imagen}}</td>
+                    <td><img width="80px" height="80px" src="{{$producto->imagen}}" alt="imagen de {{$producto->nombre}}"></td>
                     @empty
                         <td class="text-center">¿Quien... se ha tomado todo el vino?</td>
                     @endforelse
